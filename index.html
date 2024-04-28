@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <link rel="stylesheet" href="Formulari.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<div id="background-container">
+    <iframe src="Images/Wallpaper.html" width="100%" height="100%"></iframe>
+</div>
+<div id="container">
+    <div id="banner">
+        <h2>¡Descubre el mundo con nosotros!</h2>
+        <banner>
+            ¡Embárcate en una experiencia inolvidable! En nuestra compañía de viajes, estamos comprometidos
+            a hacer realidad tus sueños de explorar destinos fascinantes en todo el mundo. Desde las maravillas naturales
+            hasta las ciudades más vibrantes, estamos aquí para hacer que cada paso de tu viaje sea memorable. Completa
+            nuestro formulario ahora mismo y déjanos ser parte de tu próxima aventura. ¡El mundo te espera, comienza tu
+            viaje hoy mismo con nosotros!
+        </banner>
+        <br/>
+        <input type="range" min="1" max="11" id="colorRange">
+    </div>
+    <div class="register">
+        <form method="post" novalidate onsubmit="return validarForm(event);">
+            <div id="botones2">
+                <h1 onclick="mostrarLogin()">Iniciar sesión</h1>
+                <h1 onclick="mostrarRegister()">Registrarse</h1>
+            </div>
+            </br>
+            <div id="container1">
+                <div id="user-box">
+                    <label id="name">
+                        <input name="name" type="text" placeholder="Nombre y apellidos">
+                        <error></error>
+                        </br></br>
+                    </label>
+                    <label id="email">
+                        <input name="email" type="text" placeholder="Correo electrónico">
+                        <error></error>
+                        </br></br>
+                    </label>
+                    <div id="phone-box">
+                        <input id="pre" list="prefijos_telefonicos" name="prefijos" required>
+                        <datalist id="prefijos_telefonicos">
+                            <option value="+30">Grecia</option>
+                            <option value="+31">Países Bajos</option>
+                            <option value="+32">Bélgica</option>
+                            <option value="+33">Francia</option>
+                            <option value="+34">España</option>
+                            <option value="+36">Hungría</option>
+                            <option value="+39">Italia</option>
+                            <option value="+40">Rumanía</option>
+                            <option value="+41">Suiza</option>
+                            <option value="+43">Austria</option>
+                            <option value="+44">Reino Unido</option>
+                            <option value="+45">Dinamarca</option>
+                            <option value="+46">Suecia</option>
+                            <option value="+47">Noruega</option>
+                            <option value="+48">Polonia</option>
+                            <option value="+49">Alemania</option>
+                            <option value="+350">Gibraltar</option>
+                            <option value="+351">Portugal</option>
+                            <option value="+352">Luxemburgo</option>
+                            <option value="+353">Irlanda</option>
+                            <option value="+354">Islandia</option>
+                            <option value="+355">Albania</option>
+                            <option value="+356">Malta</option>
+                            <option value="+357">Chipre</option>
+                            <option value="+358">Finlandia</option>
+                            <option value="+359">Bulgaria</option>
+                            <option value="+370">Lituania</option>
+                            <option value="+371">Letonia</option>
+                            <option value="+372">Estonia</option>
+                            <option value="+373">Moldavia</option>
+                            <option value="+374">Armenia</option>
+                            <option value="+375">Bielorrusia</option>
+                            <option value="+376">Andorra</option>
+                            <option value="+377">Mónaco</option>
+                            <option value="+378">San Marino</option>
+                            <option value="+379">Ciudad del Vaticano</option>
+                        </datalist>
+                        <label id="tlf">
+                            <input name="tlf" type="text" placeholder="Teléfono">
+                            <error id="errorTlf"></error>
+                            </br>
+                        </label>
+                    </div>
+                    <br/>
+                    <texte>Fecha de nacimiento:</texte>
+                    <label class="fechaNacimiento">
+                        <input id="fechaNacimiento" type="date">
+                        <error id="errorFecha"></error>
+                    </label>
+                </div>
+                <br/>
+                <div id="genre-container">
+                    <texte>Género:</texte>
+                    <select id="genero" name="genero">
+                        <option value="" selected disabled>Seleccionar</option>
+                        <option value="H">Hombre</option>
+                        <option value="M">Mujer</option>
+                        <option value="39">39 tipos de gay</option>
+                    </select>
+                    <error id="errorGenero"></error>
+                </div>
+            </div>
+            <br/>
+            <label id="noticias">
+                <texte>¿Quieres recibir noticias por correo?</texte>
+                <br/>
+                <label><input name="noticias" type="radio" value="si"> Sí, envíame noticias</label><br/>
+                <label><input name="noticias" type="radio" value="no"> No quiero recibir ninguna
+                    noticia</label><br/>
+                <error id="errorNoticias"></error>
+            </label>
+            </br>
+            <label id="opciones">
+                <texte>¿Qué vas a contratar?</texte>
+                <div class="checkboxes-container">
+                    <label><input class="checkbox-label" type="checkbox">Asistencia en el aeropuerto</label></br>
+                    <label><input class="checkbox-label" type="checkbox">Alquiler de coche</label></br>
+                    <label><input class="checkbox-label" type="checkbox">Seguro de viaje</label></br>
+                    <label><input class="checkbox-label" type="checkbox">Excursiones guiadas</label></br>
+                    <label><input class="checkbox-label" type="checkbox">Traslados al aeropuerto/hotel</label></br>
+                    <label><input class="checkbox-label" type="checkbox">Tours gastronómicos</label></br>
+                </div>
+                <error class="checkbox-error" id="errorCheckbox"></error>
+            </label>
+            <br/><br/>
+            <div id="button-container">
+                <button type="submit">Enviar</button>
+                <button type="reset">Borrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="login">
+    <form action="">
+        <div id="botones">
+            <h1 onclick="mostrarLogin()">Iniciar sesión</h1>
+            <h1 onclick="mostrarRegister()">Registrarse</h1>
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="Usuario" required>
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" placeholder="Contraseña" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="remember-box">
+            <label>
+                <input type="checkbox">Recuérdame
+            </label>
+            <a href="#">¿Olvidaste la contraseña?</a>
+        </div>
+        <button type="submit" class="btn">Iniciar sesión</button>
+        <div class="register-link">
+            <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+        </div>
+    </form>
+</div>
+</body>
+<script src="Formulari.js"></script>
+</html>
